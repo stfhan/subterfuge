@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<style>
+
+table { table-layout: fixed; width: 100%; border-collapse: collapse; }
+
+table td { padding: 4px 8px; font-family: sans-serif; }
+
+table td { border: 1px solid #999; vertical-align: top; }
+
+h2, p.description { font-family: sans-serif; }
+
+h2:target { text-decoration: underline; }
+
+table td:nth-child(1) {  }
+
+table tr.required td:nth-child(1) { color: #339; font-weight: bold; }
+
+table tr.optional td:nth-child(1) { color: #669; }
+
+table td:nth-child(2) {  }
+
+table td:nth-child(3) {  }
+
+table td:nth-child(4) { font-size: 13px; }
+
+.ad-type-String { color: #393; }
+.ad-type-Number { color: #33E; }
+.ad-type-Boolean { color: #33E; }
+.ad-type-null { color: #000; }
+.ad-type-undefined { color: #666; }
+.ad-struct { max-width: 800px; }
+</style>
+
+</head>
+
+<body>
+
+<article class='ad-struct'>
+  <h2 id='SubterfugeFrame'>  SubterfugeFrame  </h2>
+
+  <p class='description'>
+  struct SubterfugeFrame Represents complete state for a Subterfuge App. 
+ Strictly speaking, none of the member values are required,
+ however it is expected, that at least `list` or `form`
+ is provided.
+
+  </p>
+
+<table class='ad-table'>
+<tbody>
+
+<tr class='required'>
+  <td>  menu   </td>
+  <td>Array [ <a href='#MenuItem'>MenuItem</a> ]  </td>
+  <td class='ad-type-Array'>  </td>
+  <td> If not provided, menu from previous frame might be reused.  </td>
+</tr>
+<tr class='required'>
+  <td>  list   </td>
+  <td><a href='#ItemList'>ItemList</a>  </td>
+  <td class='ad-type-Object'>  </td>
+  <td>   </td>
+</tr>
+<tr class='required'>
+  <td>  form   </td>
+  <td><a href='#Form'>Form</a>  </td>
+  <td class='ad-type-Object'>  </td>
+  <td>   </td>
+</tr>
+<tr class='optional'>
+  <td>  title   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>""
+  </td>
+  <td>optional. User-friendly title of this frame.  </td>
+</tr>
+</tbody>
+</table></article>
+<article class='ad-struct'>
+  <h2 id='MenuItem'>  MenuItem  </h2>
+
+  <p class='description'>
+  struct MenuItem
+  </p>
+
+<table class='ad-table'>
+<tbody>
+
+<tr class='required'>
+  <td>  href   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"posts"
+  </td>
+  <td> Unique identifier.  </td>
+</tr>
+<tr class='required'>
+  <td>  label   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"Posts"
+  </td>
+  <td> User-friendly title.  </td>
+</tr>
+<tr class='optional'>
+  <td>  icon   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>//. optional. Full URL to an svg/png/gif file.
+""
+  </td>
+  <td> optional. Full URL to an svg/png/gif file.  </td>
+</tr>
+</tbody>
+</table></article>
+<article class='ad-struct'>
+  <h2 id='ItemList'>  ItemList  </h2>
+
+  <p class='description'>
+  struct ItemList
+  </p>
+
+<table class='ad-table'>
+<tbody>
+
+<tr class='required'>
+  <td>  filters   </td>
+  <td>Array [ <a href='#ListFilter'>ListFilter</a> ]  </td>
+  <td class='ad-type-Array'>  </td>
+  <td>  </td>
+</tr>
+<tr class='required'>
+  <td>  headers   </td>
+  <td>Array [ <a href='#ListHeader'>ListHeader</a> ]  </td>
+  <td class='ad-type-Array'>  </td>
+  <td>  </td>
+</tr>
+<tr class='required'>
+  <td>  items   </td>
+  <td>Array [ <a href='#ListItem'>ListItem</a> ]  </td>
+  <td class='ad-type-Array'>  </td>
+  <td>  </td>
+</tr>
+<tr class='required'>
+  <td>  pages   </td>
+  <td>Array [ <a href='#ListPage'>ListPage</a> ]  </td>
+  <td class='ad-type-Array'>  </td>
+  <td>  </td>
+</tr>
+<tr class='required'>
+  <td>  create_href   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"posts/0"
+  </td>
+  <td>apu  </td>
+</tr>
+<tr class='required'>
+  <td>  filter_href   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"posts"
+  </td>
+  <td>morbid  </td>
+</tr>
+</tbody>
+</table></article>
+<article class='ad-struct'>
+  <h2 id='ListFilter'>  ListFilter  </h2>
+
+  <p class='description'>
+  struct ListFilter
+  </p>
+
+<table class='ad-table'>
+<tbody>
+
+<tr class='required'>
+  <td>  name   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"title"
+  </td>
+  <td>  </td>
+</tr>
+<tr class='required'>
+  <td>  type   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"search"
+  </td>
+  <td>  </td>
+</tr>
+<tr class='required'>
+  <td>  value   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>""
+  </td>
+  <td>  </td>
+</tr>
+</tbody>
+</table></article>
+<article class='ad-struct'>
+  <h2 id='ListFilter'>  ListFilter  </h2>
+
+  <p class='description'>
+  struct ListFilter
+  </p>
+
+<table class='ad-table'>
+<tbody>
+
+<tr class='required'>
+  <td>  name   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"status"
+  </td>
+  <td>  </td>
+</tr>
+<tr class='required'>
+  <td>  type   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"toggle"
+  </td>
+  <td>  </td>
+</tr>
+<tr class='required'>
+  <td>  options   </td>
+  <td>Array [ <a href='#Option'>Option</a> ]  </td>
+  <td class='ad-type-Array'>  </td>
+  <td>  </td>
+</tr>
+</tbody>
+</table></article>
+<article class='ad-struct'>
+  <h2 id='Option'>  Option  </h2>
+
+  <p class='description'>
+  struct Option
+  </p>
+
+<table class='ad-table'>
+<tbody>
+
+<tr class='required'>
+  <td>  value   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"publish"
+  </td>
+  <td>  </td>
+</tr>
+<tr class='required'>
+  <td>  label   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"Published"
+  </td>
+  <td>  </td>
+</tr>
+</tbody>
+</table></article>
+<article class='ad-struct'>
+  <h2 id=''>    </h2>
+
+  <p class='description'>
+  
+  </p>
+
+<table class='ad-table'>
+<tbody>
+
+<tr class='required'>
+  <td>  value   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"draft"
+  </td>
+  <td>  </td>
+</tr>
+<tr class='required'>
+  <td>  label   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"Draft"
+  </td>
+  <td>  </td>
+</tr>
+</tbody>
+</table></article>
+<article class='ad-struct'>
+  <h2 id='ListHeader'>  ListHeader  </h2>
+
+  <p class='description'>
+  struct ListHeader NOTE: ListItem.columns and ListHeader must match 
+  </p>
+
+<table class='ad-table'>
+<tbody>
+
+<tr class='optional'>
+  <td>  name   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"title"
+  </td>
+  <td>  </td>
+</tr>
+<tr class='required'>
+  <td>  label   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"Title"
+  </td>
+  <td>  </td>
+</tr>
+<tr class='required'>
+  <td>  href   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"posts?sort=title"
+  </td>
+  <td>  </td>
+</tr>
+</tbody>
+</table></article>
+<article class='ad-struct'>
+  <h2 id=''>    </h2>
+
+  <p class='description'>
+  
+  </p>
+
+<table class='ad-table'>
+<tbody>
+
+<tr class='required'>
+  <td>  name   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"status"
+  </td>
+  <td>  </td>
+</tr>
+<tr class='required'>
+  <td>  label   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"Status"
+  </td>
+  <td>  </td>
+</tr>
+<tr class='required'>
+  <td>  href   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"posts?sort=status"
+  </td>
+  <td>  </td>
+</tr>
+</tbody>
+</table></article>
+<article class='ad-struct'>
+  <h2 id='ListItem'>  ListItem  </h2>
+
+  <p class='description'>
+  struct ListItem
+  </p>
+
+<table class='ad-table'>
+<tbody>
+
+<tr class='required'>
+  <td>  id   </td>
+  <td>  Number  </td>
+  <td class='ad-type-Number'>1.00
+  </td>
+  <td>  </td>
+</tr>
+<tr class='required'>
+  <td>  href   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"posts/1"
+  </td>
+  <td>  </td>
+</tr>
+<tr class='required'>
+  <td>  columns   </td>
+  <td>Array [ String ]  </td>
+  <td class='ad-type-Array'>  </td>
+  <td>  </td>
+</tr>
+</tbody>
+</table></article>
+<article class='ad-struct'>
+  <h2 id='ListPage'>  ListPage  </h2>
+
+  <p class='description'>
+  struct ListPage
+  </p>
+
+<table class='ad-table'>
+<tbody>
+
+<tr class='required'>
+  <td>  label   </td>
+  <td>  Number  </td>
+  <td class='ad-type-Number'>1.00
+  </td>
+  <td>  </td>
+</tr>
+<tr class='required'>
+  <td>  href   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"posts?p=1"
+  </td>
+  <td>  </td>
+</tr>
+</tbody>
+</table></article>
+<article class='ad-struct'>
+  <h2 id='Form'>  Form  </h2>
+
+  <p class='description'>
+  struct Form 
+  </p>
+
+<table class='ad-table'>
+<tbody>
+
+<tr class='required'>
+  <td>  href   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"posts/1"
+  </td>
+  <td>   </td>
+</tr>
+<tr class='required'>
+  <td>  title   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"Post #1"
+  </td>
+  <td>   </td>
+</tr>
+<tr class='required'>
+  <td>  fields   </td>
+  <td>Array [ <a href='#FormField'>FormField</a> ]  </td>
+  <td class='ad-type-Array'>  </td>
+  <td>   </td>
+</tr>
+<tr class='optional'>
+  <td>  groups   </td>
+  <td>Array [ <a href='#FormGroup'>FormGroup</a> ]  </td>
+  <td class='ad-type-Array'>  </td>
+  <td>optional. If specified, splits form fields into several groups.  </td>
+</tr>
+</tbody>
+</table></article>
+<article class='ad-struct'>
+  <h2 id='FormField'>  FormField  </h2>
+
+  <p class='description'>
+  struct FormField
+  </p>
+
+<table class='ad-table'>
+<tbody>
+
+<tr class='required'>
+  <td>  name   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"title"
+  </td>
+  <td>name of the field  </td>
+</tr>
+<tr class='required'>
+  <td>  value   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"Post #1"
+  </td>
+  <td> current value  </td>
+</tr>
+<tr class='required'>
+  <td>  type   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"text"
+  </td>
+  <td> enum FormWidget  </td>
+</tr>
+<tr class='optional'>
+  <td>  options   </td>
+  <td>Array [ <a href='#Option'>Option</a> ]  </td>
+  <td class='ad-type-Array'>  </td>
+  <td>optional. Specifies options for multiple-choice widgets  </td>
+</tr>
+<tr class='optional'>
+  <td>  group   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>""
+  </td>
+  <td>optional. If set, must match FormGroup `name`.  </td>
+</tr>
+</tbody>
+</table></article>
+<article class='ad-struct'>
+  <h2 id='Option'>  Option  </h2>
+
+  <p class='description'>
+  struct Option
+  </p>
+
+<table class='ad-table'>
+<tbody>
+
+<tr class='required'>
+  <td>  value   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"1"
+  </td>
+  <td>  </td>
+</tr>
+<tr class='required'>
+  <td>  label   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"One"
+  </td>
+  <td>  </td>
+</tr>
+</tbody>
+</table></article>
+<article class='ad-struct'>
+  <h2 id=''>    </h2>
+
+  <p class='description'>
+  
+  </p>
+
+<table class='ad-table'>
+<tbody>
+
+<tr class='required'>
+  <td>  value   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"2"
+  </td>
+  <td>  </td>
+</tr>
+<tr class='required'>
+  <td>  label   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"Two"
+  </td>
+  <td>  </td>
+</tr>
+</tbody>
+</table></article>
+<article class='ad-struct'>
+  <h2 id='FormGroup'>  FormGroup  </h2>
+
+  <p class='description'>
+  struct FormGroup  Represents a fieldset.  NOTE: FormField objects MUST have `group` value set.
+  </p>
+
+<table class='ad-table'>
+<tbody>
+
+<tr class='optional'>
+  <td>  label   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"Main"
+  </td>
+  <td>  </td>
+</tr>
+<tr class='required'>
+  <td>  name   </td>
+  <td>  String  </td>
+  <td class='ad-type-String'>"main"
+  </td>
+  <td>  </td>
+</tr>
+</tbody>
+</table></article>
+</body>
+
+</html>
+
